@@ -3,155 +3,62 @@
 <html lang="en">
 
     <head>
-        <title>DeityCord</title>
+        <title> Learning Backend </title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Randomly generate newsletter/blog-like posts for NASA related contents..-">
+
+        <!--OG/FB-->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nasa.godsclub.net" />
+        <meta property="og:title" content="NASA - Gods Club" />
+        <meta property="og:description" content="Randomly generate newsletter/blog-like posts for NASA related contents..-" />
+        <meta property="og:image" content="https://repository-images.githubusercontent.com/572935751/a9bdddac-8736-4ba7-aa64-e5da77927c7a" />
+
+        <!--Twitter-->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://nasa.godsclub.net" />
+        <meta property="twitter:title" content="NASA - Gods Club" />
+        <meta property="twitter:description" content="Randomly generate newsletter/blog-like posts for NASA related contents..-" />
+        <meta property="twitter:image" content="https://repository-images.githubusercontent.com/572935751/a9bdddac-8736-4ba7-aa64-e5da77927c7a">
+
         <link rel="stylesheet" href="style.css">
-        
     </head>
 
     <body>
-        <section id="containerDisplay">
-            <section id="columnContainerServers">
-               
-            </section>
-
-            <section id="containerServer">
-                <section id="containerList">
-                    <section id="containerListHeader">
-                        <h2 id="serverName">
-
-                        </h2>
-                    </section>
-
-                    <section id="containerListBody">
-                        <section id="severBody">
-                            <section class="messageBody">
-                                <section id="messagesHeader">
-
+        <section id="cont_mountKTypPp">
+            <section id="cont_bodygHItyS">
+                <section id="cont_feed">
+                    <nav id="navel">
+                        <ul id="list_feed">
+                            <li id="post_1" style="z-index: 999;">
+                                <section id="uid_post">
+                                    <section id="cont_post">
+                                        <section id="vid_post" style="background-image: url('https://images-assets.nasa.gov/image/MAF_20210822_MoonOverNOLA/MAF_20210822_MoonOverNOLA~thumb.jpg'); background-position: 50% 50%;  background-attachment: fixed; background-repeat: no-repeat; background-size: 100vh auto; -webkit-background-clip: block; -moz-background-clip: block; background-clip: block; height: 25vw; width: 32vw;" title="MAF:New Orleans, LA, USA (photo by Michael DeMocker)">
+                                            <section id="uid_hoverCover"></section>
+                                            <section id="uid_post_head">
+                                                <section id="uid_postAuth">
+                                                    <section id="uid_postAuth_name">
+                                                        <h3>──────────────<br> <span id="postTitle" style="font-weight: 1000; font-size: 1.1vw;">Moon rises over New Orleans</span>&ZeroWidthSpace; &ZeroWidthSpace; &ZeroWidthSpace; &ZeroWidthSpace;A paddlewheeler makes its way up the Mississippi River as the moon rises over New Orleans on Sunday evening, August 22, 2021. The August Sturgeon Moon, which was also a rare Blue Moon, was full at 7:02 A.M. local time Sunday but the nearly full moon still put on a show when it rose over New Orleans later that evening. New Orleans is home to the NASA Michoud Assembly Facility where the core stage o...<span id="postDate">22/08/2021</span><br>       ───────────</h3>
+                                                    </section>
+                                                </section>
+                                            </section>
+                                        </section>
+                                    </section>
                                 </section>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
 
-                                <nav>
-                                    <ul>
-
-                                    </ul>
-                                </nav>
-
-                                <section id="messagesFooter">
-
-                                </section>
-
-                                <section id="messageFooter">
-
-                                </section>
-                            </section>
-
-                            <section id="messageHeader">
-
-                            </section>
-                            
-                            <section id="messagesContainer">
-                                <section id="inputContainer">
-                                    <textarea id="messageInput" placeholder="Message #TextChat"></textarea>
-                                </section>
-                                
-                                <section id="buttonContainer">
-                                    <a id="messageSend">
-                                        <svg id="messageButton" xmlns="http://www.w3.org/2000/svg" version="1.0" width="50.000000pt" height="50.000000pt" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet">
-                                            <g id="sendVector"  transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)" style="opacity: 50%; stroke: 0; fill: #fff;">
-                                            <path d="M91 200 c9 -24 17 -30 40 -30 16 0 29 -4 29 -10 0 -5 -13 -10 -29 -10 -23 0 -31 -6 -40 -30 -5 -16 -6 -30 -2 -30 18 0 141 61 141 70 0 9 -123 70 -141 70 -4 0 -3 -13 2 -30z"/>
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </section>
-                            </section>
-                        </section>
-
-                        <section id="containerHeader">
-
-                        </section>
-                    </section>
-                </section> 
+                <a class="addpost" style="z-index: 99999;" href="#"><button></button></a>
             </section>
         </section>
 
-
-        <script src="/scripts/data.js"> 
-            console.log(threadsq);
-        </script>
-
-        <script defer>
-            window.onload = function() {
-                document.getElementById('severBody').onload = function() {
-                    setTimeout(3000)
-                    document.getElementById('severBody').scroll({ top: document.getElementById('severBody').scrollHeight, behavior: 'smooth' });
-                }
-            }
-        </script>
-
-        <script defer>
-            var isInput = false;
-
-            document.getElementById('messageInput').addEventListener('input', function() { if (this.value.length > 0) { isInput = true; } else { isInput = false; } document.getElementById('messageButton').style.opacity = event.target.value.length > 0 ? 1 : 0.3 })
-  
-            document.getElementById('messageSend').addEventListener('mouseover', function() { if (isInput) { document.getElementById('sendVector').style = 'fill: #949cf7; opacity: 100%; cursor: pointer;'; document.getElementById('buttonContainer').style = 'cursor: pointer;' } })
-
-            document.getElementById('messageSend').addEventListener('mouseout', function() { if (isInput) { document.getElementById('sendVector').style = 'fill: #fff; opacity: 100%;'; document.getElementById('buttonContainer').style = 'cursor: pointer;' } })
-
-            document.getElementById('severBody').scroll({ top: document.getElementById('severBody').scrollHeight, behavior: 'smooth' });
-        </script>
-
-        <script>
-            var id = window.location.search.slice(1);
-            function addMessage(message) {
-                var messageHtml =  `
-                    <li id="message">
-                        <div id="message-head">
-                            <h2>${message.name}    <span style="color: #999; font-size: 12px">14/11/2022</span></h2>
-                        </div>
-
-                        <div id="message-content">
-                            ${message.content}
-                        </div>
-                    </li>
-                `
-
-                msgs.insertAdjacentHTML("beforeend", messageHtml);
-            }
-
-            var msgs = document.querySelector("ul");
-            for (let message of threadsq) {
-                addMessage(message);
-            }
-
-            var btn = document.querySelector("#messageSend");
-
-            btn.addEventListener("click", function() {
-                if (document.getElementById('messageInput').value.length > 0) {
-
-                    var txt = document.querySelector("#messageInput");
-
-                    var message = {
-                        name: "Anon",
-                        avatar: "",
-                        id: 0,
-
-                        content: txt.value,
-                        timestamp: Date.now(),
-                    }
-                    
-                    addMessage(message);
-
-                    txt.value = "";
-                    threadsq.push(message);
-
-                    localStorage.setItem("threadsq", JSON.stringify(threadsq));
-
-                    document.getElementById('messageButton').style = 'fill: #949cf7; opacity: 20%';
-
-                    isInput = false;
-
-                    document.getElementById('severBody').scroll({ top: document.getElementById('severBody').scrollHeight, behavior: 'smooth' });
-                }
-            })  
+        <script type="text/javascript" src="/scripts/elementInject.js">
         </script>
     </body>
+
 </html>
