@@ -1,0 +1,199 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+        
+        
+/* Root Variables */
+
+:root {
+    /* Colors */
+
+    --transparent: #ffffff00;
+
+    --white: #ffffff;
+    --black: #000000;
+
+    --greymain: #36393f;
+    --greysecondary: #40444b;
+    --greytertiary: #2c2f34;
+    --greyquaternary: #2f3136;
+    --greyquinary: #292b2f;
+    --greysenary: #202225;
+    --greyseptenary: #51555b;
+
+    --blurplesecondary: #5763e9;
+
+    /* Fonts */
+
+    --archivoDefault: 'Inter', sans-serif;
+}
+
+/* Core Elements */
+
+html {aspect-ratio: 18 / 4;}
+body { margin: 0; background-color: #202225; overflow-x: hidden; scrollbar-width: none; }
+
+/* ID Elements */
+
+#cont_mountKTypPp { height: 100vh; width: 100vw; position: fixed; z-index: 1; background-color: var(--transparent); scrollbar-width: none; overflow-x: hidden; }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#cont_bodygHItyS { height: 100vh; width: 100vw; background-color: var(--transparent); position: fixed;}
+
+ul { list-style-type: none; margin-top: 9vw;}
+ul li { margin-top: 0vw; position: relative; }
+
+.addpost {
+    background-color: var(--blurplesecondary);
+    color: #00d572;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 100%;
+    height: 2vw;
+    width: 2vw;
+    position: fixed;
+    top: 93%;
+    left: 70%;
+    font-size: 1.7vw;
+    font-family: var(--archivoDefault);
+    transition: .5s;
+}
+
+.addpost:hover {
+    cursor: progress;
+    background-color: #00d572;
+}
+
+.addpost button {
+    position: relative;
+    top: 45%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    background-color: var(--transparent);  
+    border: none;
+    outline: none;
+    font-size: 1.7vw;
+    font-family: var(--archivoDefault);
+    color: #00d572;
+    user-select: none;
+}
+
+#cont_feed {
+    height: 100%;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#cont_feed::-webkit-scrollbar {
+    display: none;
+}
+
+#uid_post {
+    width: 29.5vw;
+    background-color: transparent;
+    position: relative;
+    left: 47.7vw;
+    transform: translateX(-50vw); 
+    display: flex;
+    margin-top: -7vh;
+    padding-bottom: 5vh;
+}
+
+#cont_post {
+    height: 100%;
+    width: 10vw;
+    background-color: transparent;
+    position: relative;
+    display: list-item;
+    list-style: none;
+}
+
+#vid_post {
+    height: 100%;
+    width: 10vw;
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: #202225;
+    padding: 0;
+}
+
+.vid_player {
+    width: auto;
+    height: 37vh;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#uid_post_head {
+    background-image: linear-gradient(0deg,  #20222500, #202225a9, #202225, #202225, #202225, #202225, #202225a9, #20222500); background-size: 100%; background-repeat: repeat; -webkit-background-clip: block; -moz-background-clip: block; background-clip: block;
+    height: 10vh;
+    width: 100vw;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: -7vh;
+    padding-top: 10vh;
+}
+
+#uid_postAuth_name {
+    height: 100%;
+    position: relative;
+    top: -28vh;
+    left: 35vw;
+    margin-left: 10vw;
+    padding: 0;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+#uid_postAuth_name h2 {
+    font-family: var(--archivoDefault);
+    font-size: 2.5vh;
+    color: hsl(228, 58%, 85%);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 1vw;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+#postDate {
+    font-size: 1.2vh;
+    font-family: var(--archivoDefault);
+    font-size: 1.5vh;
+    color: #7c8187;
+    margin-left: 0.5vw;
+    opacity: 30%;
+}
+
+#uid_postAuth_name h3 {
+    font-family: var(--archivoDefault);
+    font-size: 1.5vh;
+    color: #7c8187;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0vw;
+    width: 32%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#postTitle {
+    color: var(--blurplesecondary)
+}
