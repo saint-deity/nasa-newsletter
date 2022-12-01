@@ -42,7 +42,7 @@
                     document.getElementById('cont_feed').scroll({ top: document.getElementById('cont_feed').scrollHeight, behavior: 'smooth' });
                 }, 1000);
 
-                const query = "https://images-api.nasa.gov/search?q=apollo%2011&description=moon%20landing&media_type=image";
+                const query = "https://images-api.nasa.gov/search?q=news&media_type=image";
                 fetch(query)
                 .then(res => res.json())
                 .then(data => {
@@ -54,7 +54,15 @@
                     // get image title
                     const title = item.data[0].title;
                     // get image description
-                    const description = item.data[0].description;
+                    var description = item.data[0].description.split("");
+
+                    if (description.length > 400) {
+                        description = description.slice(0, 400);
+                        description.push("...");
+                    }
+
+                    description = description.join("");
+
                     // get image date
                     const date = item.data[0].date_created.split("T")[0].split("-").reverse().join("/");
 
@@ -72,8 +80,7 @@
                     <li id="post_${postnum}" style="z-index: ${(998-postnum)}; margin-top: -10vw;">
                         <section id="uid_post">
                             <section id="cont_post">
-                                <section id="vid_post">
-                                    <img class="vid_player" src="${img}" title="${hq}:${location} (photo by ${photographer})">
+                                <section id="vid_post" style="background-image: url('${img}'); background-position: absolute; background-repeat: no-repeat; background-size: 100vh auto; -webkit-background-clip: block; -moz-background-clip: block; background-clip: block; height: 25vw; width: 32vw;" title="${hq}:${location} (photo by ${photographer})">
                                 </section>
                                     
                                 <section id="uid_post_head">
