@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head><title> Learning Backend </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <section id="cont_mountKTypPp">
+            <section id="cont_bodygHItyS">
+                <section id="cont_feed">
+                    <nav id="navel">
+                        <ul id="list_feed">
+                            <li id="post_1" style="z-index: 999;">
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <a class="addpost" style="z-index: 99999;" href="#"><button></button></a>
+            </section>
+        </section>
+
+        <script type="text/javascript">
+            //var vid = document.getElementById("vid_player");
+            //vid.play();
+
+            var thebutton = document.querySelector(".addpost");
+            var postnum = 3;
+
+            // create new post
+            thebutton.addEventListener("click", function() {
+                
+
+                 // scroll to bottom
+                console.log(`scrolling to post_${(postnum+1)} from post_${postnum}`);
+
+                setTimeout(function() {
+                    document.getElementById('cont_feed').scroll({ top: document.getElementById('cont_feed').scrollHeight, behavior: 'smooth' });
+                }, 1000);
+
+                const query = "https://images-api.nasa.gov/search?q=apollo%2011&description=moon%20landing&media_type=image";
+                fetch(query)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    //get random image
+                    const random = Math.floor(Math.random() * data.collection.items.length);
+                    const item = data.collection.items[random];
+                    const img = item.links[0].href;
+                    // get image title
+                    const title = item.data[0].title;
+                    // get image description
+                    const description = item.data[0].description;
+                    // get image date
+                    const date = item.data[0].date_created.split("T")[0].split("-").reverse().join("/");
+
+                    // get image location, photographer, and hq
+                    const location = item.data[0].location;
+                    const photographer = item.data[0].photographer;
+                    const hq = item.data[0].center;
+
+                    // get nasa id
+                    const nasa_id = item.data[0].nasa_id;
+
+                    // set image
+
+                    var postHTML = `
+                    <li id="post_${postnum}" style="z-index: ${(998-postnum)}; margin-top: -10vw;">
+                        <section id="uid_post">
+                            <section id="cont_post">
+                                <section id="vid_post">
+                                    <img class="vid_player" src="${img}" title="${hq}:${location} (photo by ${photographer})">
+                                </section>
+                                    
+                                <section id="uid_post_head">
+                                    <section id="uid_postAuth">
+    
+                                        <section id="uid_postAuth_name">
+                                            <h3>──────────────<br> <span id="postTitle" style="font-weight: 1000; font-size: 1vw;">${title}</span>​ ​ ​ ​${description}</span><span id="postDate">${date}</span><br>       ───────────</h3>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </li>`
+
+                    document.querySelector("ul").insertAdjacentHTML("beforeend", postHTML);
+                });
+                
+                postnum++;
+            });
+        </script>
+    </body>
+
+</html>
