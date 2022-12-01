@@ -3,123 +3,155 @@
 <html lang="en">
 
     <head>
-        <title> NASA Newsletter </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-       
-        <meta name="description" content="Randomly generate newsletter/blog-like posts for NASA related contents..-">
-        <meta content="#2f3136" data-react-helmet="true" name="theme-color" />
+        <title>DeityCord</title>
+        <link rel="stylesheet" href="styles.css">
         
-        <!--OG/FB-->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://godsclub.net" />
-        <meta property="og:title" content="NASA - Gods Club" />
-        <meta property="og:description" content="Randomly generate newsletter/blog-like posts for NASA related contents..-" />
-        <meta property="og:image" content="https://repository-images.githubusercontent.com/572935751/a9bdddac-8736-4ba7-aa64-e5da77927c7a" />
-
-        <!--Twitter-->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://godsclub.net" />
-        <meta property="twitter:title" content="NASA - Gods Club" />
-        <meta property="twitter:description" content="Randomly generate newsletter/blog-like posts for NASA related contents..-" />
-        <meta property="twitter:image" content="https://repository-images.githubusercontent.com/572935751/a9bdddac-8736-4ba7-aa64-e5da77927c7a">
-
-        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <section id="cont_mountKTypPp">
-            <section id="cont_bodygHItyS">
-                <section id="cont_feed">
-                    <nav id="navel">
-                        <ul id="list_feed">
-                            <li id="post_1" style="z-index: 999;">
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-
-                <a class="addpost" style="z-index: 99999;" href="#"><button></button></a>
+        <section id="containerDisplay">
+            <section id="columnContainerServers">
+               
             </section>
-        </section>
 
-        <script type="text/javascript">
-            //var vid = document.getElementById("vid_player");
-            //vid.play();
+            <section id="containerServer">
+                <section id="containerList">
+                    <section id="containerListHeader">
+                        <h2 id="serverName">
 
-            var thebutton = document.querySelector(".addpost");
-            var postnum = 3;
+                        </h2>
+                    </section>
 
-            // create new post
-            thebutton.addEventListener("click", function() {
-                
+                    <section id="containerListBody">
+                        <section id="severBody">
+                            <section class="messageBody">
+                                <section id="messagesHeader">
 
-                 // scroll to bottom
-                console.log(`scrolling to post_${(postnum+1)} from post_${postnum}`);
-
-                setTimeout(function() {
-                    document.getElementById('cont_feed').scroll({ top: document.getElementById('cont_feed').scrollHeight, behavior: 'smooth' });
-                }, 1000);
-
-                const query = "https://images-api.nasa.gov/search?q=news&media_type=image";
-                fetch(query)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    //get random image
-                    const random = Math.floor(Math.random() * data.collection.items.length);
-                    const item = data.collection.items[random];
-                    const img = item.links[0].href;
-                    // get image title
-                    const title = item.data[0].title;
-                    // get image description
-                    var description = item.data[0].description.split("");
-
-                    if (description.length > 400) {
-                        description = description.slice(0, 400);
-                        description.push("...");
-                    }
-
-                    description = description.join("");
-
-                    // get image date
-                    const date = item.data[0].date_created.split("T")[0].split("-").reverse().join("/");
-
-                    // get image location, photographer, and hq
-                    const location = item.data[0].location;
-                    const photographer = item.data[0].photographer;
-                    const hq = item.data[0].center;
-
-                    // get nasa id
-                    const nasa_id = item.data[0].nasa_id;
-
-                    // set image
-
-                    var postHTML = `
-                    <li id="post_${postnum}" style="z-index: ${(998-postnum)}; margin-top: -10vw;">
-                        <section id="uid_post">
-                            <section id="cont_post">
-                                <section id="vid_post" style="background-image: url('${img}'); background-position: absolute; background-repeat: no-repeat; background-size: 100vh auto; -webkit-background-clip: block; -moz-background-clip: block; background-clip: block; height: 25vw; width: 32vw;" title="${hq}:${location} (photo by ${photographer})">
                                 </section>
-                                    
-                                <section id="uid_post_head">
-                                    <section id="uid_postAuth">
-    
-                                        <section id="uid_postAuth_name">
-                                            <h3>──────────────<br> <span id="postTitle" style="font-weight: 1000; font-size: 1vw;">${title}</span>​ ​ ​ ​${description}</span><span id="postDate">${date}</span><br>       ───────────</h3>
-                                        </section>
-                                    </section>
+
+                                <nav>
+                                    <ul>
+
+                                    </ul>
+                                </nav>
+
+                                <section id="messagesFooter">
+
+                                </section>
+
+                                <section id="messageFooter">
+
+                                </section>
+                            </section>
+
+                            <section id="messageHeader">
+
+                            </section>
+                            
+                            <section id="messagesContainer">
+                                <section id="inputContainer">
+                                    <textarea id="messageInput" placeholder="Message #TextChat"></textarea>
+                                </section>
+                                
+                                <section id="buttonContainer">
+                                    <a id="messageSend">
+                                        <svg id="messageButton" xmlns="http://www.w3.org/2000/svg" version="1.0" width="50.000000pt" height="50.000000pt" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet">
+                                            <g id="sendVector"  transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)" style="opacity: 50%; stroke: 0; fill: #fff;">
+                                            <path d="M91 200 c9 -24 17 -30 40 -30 16 0 29 -4 29 -10 0 -5 -13 -10 -29 -10 -23 0 -31 -6 -40 -30 -5 -16 -6 -30 -2 -30 18 0 141 61 141 70 0 9 -123 70 -141 70 -4 0 -3 -13 2 -30z"/>
+                                            </g>
+                                        </svg>
+                                    </a>
                                 </section>
                             </section>
                         </section>
-                    </li>`
 
-                    document.querySelector("ul").insertAdjacentHTML("beforeend", postHTML);
-                });
-                
-                postnum++;
-            });
+                        <section id="containerHeader">
+
+                        </section>
+                    </section>
+                </section> 
+            </section>
+        </section>
+
+
+        <script src="/scripts/data.js"> 
+            console.log(threadsq);
+        </script>
+
+        <script defer>
+            window.onload = function() {
+                document.getElementById('severBody').onload = function() {
+                    setTimeout(3000)
+                    document.getElementById('severBody').scroll({ top: document.getElementById('severBody').scrollHeight, behavior: 'smooth' });
+                }
+            }
+        </script>
+
+        <script defer>
+            var isInput = false;
+
+            document.getElementById('messageInput').addEventListener('input', function() { if (this.value.length > 0) { isInput = true; } else { isInput = false; } document.getElementById('messageButton').style.opacity = event.target.value.length > 0 ? 1 : 0.3 })
+  
+            document.getElementById('messageSend').addEventListener('mouseover', function() { if (isInput) { document.getElementById('sendVector').style = 'fill: #949cf7; opacity: 100%; cursor: pointer;'; document.getElementById('buttonContainer').style = 'cursor: pointer;' } })
+
+            document.getElementById('messageSend').addEventListener('mouseout', function() { if (isInput) { document.getElementById('sendVector').style = 'fill: #fff; opacity: 100%;'; document.getElementById('buttonContainer').style = 'cursor: pointer;' } })
+
+            document.getElementById('severBody').scroll({ top: document.getElementById('severBody').scrollHeight, behavior: 'smooth' });
+        </script>
+
+        <script>
+            var id = window.location.search.slice(1);
+            function addMessage(message) {
+                var messageHtml =  `
+                    <li id="message">
+                        <div id="message-head">
+                            <h2>${message.name}    <span style="color: #999; font-size: 12px">14/11/2022</span></h2>
+                        </div>
+
+                        <div id="message-content">
+                            ${message.content}
+                        </div>
+                    </li>
+                `
+
+                msgs.insertAdjacentHTML("beforeend", messageHtml);
+            }
+
+            var msgs = document.querySelector("ul");
+            for (let message of threadsq) {
+                addMessage(message);
+            }
+
+            var btn = document.querySelector("#messageSend");
+
+            btn.addEventListener("click", function() {
+                if (document.getElementById('messageInput').value.length > 0) {
+
+                    var txt = document.querySelector("#messageInput");
+
+                    var message = {
+                        name: "Anon",
+                        avatar: "",
+                        id: 0,
+
+                        content: txt.value,
+                        timestamp: Date.now(),
+                    }
+                    
+                    addMessage(message);
+
+                    txt.value = "";
+                    threadsq.push(message);
+
+                    localStorage.setItem("threadsq", JSON.stringify(threadsq));
+
+                    document.getElementById('messageButton').style = 'fill: #949cf7; opacity: 20%';
+
+                    isInput = false;
+
+                    document.getElementById('severBody').scroll({ top: document.getElementById('severBody').scrollHeight, behavior: 'smooth' });
+                }
+            })  
         </script>
     </body>
-
 </html>
